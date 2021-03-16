@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offices</title>
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/fa772c2dc0.js" crossorigin="anonymous"></script>
+    <!-- Custom Stylesheet-->
+    <link rel="stylesheet" href="/public/css/style.css">
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--JQuery, Popper Js, Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <div class="col-sm-12">
+    <center>
+        <a href="/">
+            <img src="/images/Logo.PNG" alt="logo" height="150px" width="150px">
+        </a>
+        <br />
+        <h1>BestChoice Offices</h1>
+        <h3>Welcome to <%= title %></h3>
+    </center>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Employee Number</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Extension</th>
+                <th>Email</th>
+                <th>Office Code</th>
+                <th>Report To</th>
+                <th>Job Title</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td><a href="/offices/employees/<%= employees.employeeNumber %>"><%= employees.employeeNumber %></a></td>
+                    <td><%= employees.lastName %></td>
+                    <td><%= employees.firstName %></td>
+                    <td><%= employees.extension %></td>
+                    <td><%= employees.email %></td>
+                    <td><%= employees.officeCode %></td>
+                    <td><%= employees.reportsTo %></td>
+                    <td><%= employees.jobTitle %></td>
+                    <td>
+                        <a href="/offices/employees/<%= employees.officeCode %>/edit/<%= employees.employeeNumber %>"><button type="submit">Edit</button></a>
+                        <a href="/offices/employees/<%= employees.officeCode %>/delete/<%= employees.employeeNumber %>"><button type="submit">Delete</button></a>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <p><a href="/offices/employees/add"><button type="submit">Add Employee</button></a></p>
+    <hr>
+    <footer>
+        <center>11170737 - Designed by Phạm Mạnh Cường</center>
+    </footer>
+</body>
+
+</html>
